@@ -1,0 +1,8 @@
+
+State Machine - |urna|estado
+Name estado.Computa estado.Apura estado.Verifica estado.Espera estado.Exibe 
+estado.Espera 0 0 0 0 0 
+estado.Verifica 0 0 1 1 0 
+estado.Apura 0 1 0 1 0 
+estado.Computa 1 0 0 1 0 
+estado.Exibe 0 0 0 1 1 
