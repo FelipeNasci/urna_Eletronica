@@ -1,5 +1,5 @@
 Analysis & Synthesis report for urna
-Wed Oct 17 13:39:50 2018
+Thu Oct 18 15:40:32 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,13 +13,13 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |urna|estado
+  8. State Machine - |urna|estado_atual
   9. Registers Removed During Synthesis
  10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |urna
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |urna
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -45,15 +45,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 17 13:39:50 2018           ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 18 15:40:32 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; urna                                            ;
 ; Top-level Entity Name              ; urna                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 12                                              ;
-;     Total combinational functions  ; 12                                              ;
-;     Dedicated logic registers      ; 5                                               ;
-; Total registers                    ; 5                                               ;
+; Total logic elements               ; 8                                               ;
+;     Total combinational functions  ; 6                                               ;
+;     Dedicated logic registers      ; 8                                               ;
+; Total registers                    ; 8                                               ;
 ; Total pins                         ; 10                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -158,13 +158,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                 ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                                                   ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
-; urna.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Diego Felipe/OneDrive/Programacao/Quartus II/Projeto-Final-CL2-Urna-Eletronica/urna_Eletronica/Urna_Eletronica/urna.v ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                            ;
++----------------------------------+-----------------+------------------------+-------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path              ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------+---------+
+; urna.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Diego Felipe/Desktop/urna/urna.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -172,28 +172,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 12    ;
+; Estimated Total logic elements              ; 8     ;
 ;                                             ;       ;
-; Total combinational functions               ; 12    ;
+; Total combinational functions               ; 6     ;
 ; Logic element usage by number of LUT inputs ;       ;
 ;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 4     ;
-;     -- <=2 input functions                  ; 8     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 6     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 12    ;
+;     -- normal mode                          ; 6     ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 5     ;
-;     -- Dedicated logic registers            ; 5     ;
+; Total registers                             ; 8     ;
+;     -- Dedicated logic registers            ; 8     ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 10    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; reset ;
-; Maximum fan-out                             ; 11    ;
-; Total fan-out                               ; 49    ;
-; Average fan-out                             ; 1.81  ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 5     ;
+; Total fan-out                               ; 30    ;
+; Average fan-out                             ; 1.25  ;
 +---------------------------------------------+-------+
 
 
@@ -202,36 +202,35 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |urna                      ; 12 (12)           ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |urna               ; work         ;
+; |urna                      ; 6 (6)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |urna               ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------+
-; State Machine - |urna|estado                                                                     ;
-+-----------------+----------------+--------------+-----------------+---------------+--------------+
-; Name            ; estado.Computa ; estado.Apura ; estado.Verifica ; estado.Espera ; estado.Exibe ;
-+-----------------+----------------+--------------+-----------------+---------------+--------------+
-; estado.Espera   ; 0              ; 0            ; 0               ; 0             ; 0            ;
-; estado.Verifica ; 0              ; 0            ; 1               ; 1             ; 0            ;
-; estado.Apura    ; 0              ; 1            ; 0               ; 1             ; 0            ;
-; estado.Computa  ; 1              ; 0            ; 0               ; 1             ; 0            ;
-; estado.Exibe    ; 0              ; 0            ; 0               ; 1             ; 1            ;
-+-----------------+----------------+--------------+-----------------+---------------+--------------+
++------------------------------------------------------------------------------------------+
+; State Machine - |urna|estado_atual                                                       ;
++-----------------------+---------------------+-----------------------+--------------------+
+; Name                  ; estado_atual.Espera ; estado_atual.Verifica ; estado_atual.Apura ;
++-----------------------+---------------------+-----------------------+--------------------+
+; estado_atual.Espera   ; 0                   ; 0                     ; 0                  ;
+; estado_atual.Apura    ; 1                   ; 0                     ; 1                  ;
+; estado_atual.Verifica ; 1                   ; 1                     ; 0                  ;
++-----------------------+---------------------+-----------------------+--------------------+
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; estado~2                              ; Lost fanout        ;
-; estado~3                              ; Lost fanout        ;
-; estado~5                              ; Lost fanout        ;
-; estado~6                              ; Lost fanout        ;
-; Total Number of Removed Registers = 4 ;                    ;
-+---------------------------------------+--------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; HEX0[5]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; HEX0[1]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; estado_atual~5                        ; Lost fanout                            ;
+; estado_atual~7                        ; Lost fanout                            ;
+; estado_atual~8                        ; Lost fanout                            ;
+; Total Number of Removed Registers = 5 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -239,23 +238,14 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 5     ;
+; Total registers                              ; 8     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 3     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 5     ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |urna|estado_atual.Espera  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +----------------------------------------------------------------------+
@@ -264,10 +254,10 @@ Encoding Type:  One-Hot
 ; Parameter Name ; Value ; Type                                        ;
 +----------------+-------+---------------------------------------------+
 ; Espera         ; 0     ; Signed Integer                              ;
-; Verifica       ; 1     ; Signed Integer                              ;
-; Apura          ; 2     ; Signed Integer                              ;
-; Computa        ; 3     ; Signed Integer                              ;
-; Exibe          ; 4     ; Signed Integer                              ;
+; Apura          ; 1     ; Signed Integer                              ;
+; Computa        ; 2     ; Signed Integer                              ;
+; Exibe          ; 3     ; Signed Integer                              ;
+; Verifica       ; 4     ; Signed Integer                              ;
 +----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -287,23 +277,37 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Oct 17 13:39:48 2018
+    Info: Processing started: Thu Oct 18 15:40:31 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off urna -c urna
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file urna.v
     Info (12023): Found entity 1: urna
+Info (12021): Found 1 design units, including 1 entities, in source file /users/diego felipe/desktop/urna-lcd-master/modulo digitos/digitos.v
+    Info (12023): Found entity 1: digitos
+Warning (10227): Verilog HDL Port Declaration warning at urna.v(14): data type declaration for "HEX0" declares packed dimensions but the port declaration declaration does not
+Info (10499): HDL info at urna.v(13): see declaration for object "HEX0"
 Info (12127): Elaborating entity "urna" for the top level hierarchy
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[1]" is stuck at VCC
+    Warning (13410): Pin "HEX0[5]" is stuck at GND
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Diego Felipe/Desktop/urna/output_files/urna.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 23 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 18 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 13 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4621 megabytes
-    Info: Processing ended: Wed Oct 17 13:39:50 2018
-    Info: Elapsed time: 00:00:02
+    Info (21061): Implemented 8 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4619 megabytes
+    Info: Processing ended: Thu Oct 18 15:40:32 2018
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Diego Felipe/Desktop/urna/output_files/urna.map.smsg.
 
 

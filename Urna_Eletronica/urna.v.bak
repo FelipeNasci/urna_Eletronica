@@ -1,70 +1,106 @@
-module urna (clock, numero, confirma, reset, finaliza, hex0);
 
-	input clock;
-	input confirma;						//key0
-	input reset;						//key1
-	input finaliza;						//key2
-	input [3:0] numero;					//switch
-	
-	output reg [6:0] hex0;				//display 7 seg
-	
-	reg [9:0] cand1 = 0, cand2 = 0;		//votos computados
-	reg [3:0] estadoAtual = inicial;
+`timescale 1ns/1ns
 
-	//Estados
-	parameter inicial = 0, verifica = 1, exibeCandidato = 2, computaVoto = 3, exibeVencedor = 4;
-	parameter numCand1 = 1, numCand2 = 2; 
+module urna (
+    reset,clock,botao0,
+    HEX0);
 
-	//Exibir Estado Atual
-	always@(*) 
-		
-		begin
-			case(estadoAtual)
-				inicial: hex0 			<= 	7'b1000000; // 0 
-				verifica: hex0 			<= 	7'b1111001; // 1 
-				exibeCandidato: hex0 	<= 7'b0100100; // 2 
-				computaVoto: hex0 		<= 7'b0110000; // 3 
-				exibeVencedor: hex0 	<= 7'b0011001; // 4
-		endcase
-		
-	end	
+    input reset;
+    input clock;
+    input botao0;
+    tri0 reset;
+    tri0 botao0;
+	 
+    output reg [6:0] HEX0;
+    reg reg_HEX0;
+    reg [4:0] estado;
+    reg [4:0] estado_atual;
+	 
+	 //estados
+    parameter Espera=0,Verifica=1,Apura=2,Computa=3,Exibe=4;
 
+    initial
+    begin
+			HEX0 <= 7'b0000001; //0
+        //reg_HEX0 <= 1'b0;
+    end
 
-	always@(posedge clock or negedge reset or negedge finaliza   ) 
-	
-		begin
+    always @(posedge clock)
+    begin
+        if (clock) begin
+            estado <= estado_atual;
+        end
+    end
 
-			if(~finaliza)
-				estadoAtual <= exibeVencedor;
-			if(~reset)
-				estadoAtual <= inicial;
-			
-			else begin
-			
-				case(estadoAtual)
-					inicial : 
-							if (numero != 4'b0000) estadoAtual <= verifica;
-					
-					verifica: 
-							if(numero == numCand1)
-								estadoAtual <= exibeCandidato; 
-							else if(numero == numCand2)
-								estadoAtual <= exibeCandidato;
-							else estadoAtual <= inicial;
-							  
-					exibeCandidato: 
-							if(!confirma)
-								estadoAtual <= computaVoto;
-							else estadoAtual <= inicial;
-									
-					computaVoto: estadoAtual <= inicial;
-					
-				endcase
-			end
+    always @(estado or reset or botao0 or HEX0)
+    begin
+        if (!reset) begin
+            estado_atual <= Espera;
+            //reg_HEX0 <= 1'b0;
+            HEX0 <= 7'b0000001; //0
+        end
+        else begin
+            //reg_HEX0 <= 1'b0;
+            HEX0 <= 7'b0000001; //0
+            case (estado)
+                Espera: begin
+					 
+					 HEX0 <= 7'b0000110; //E
+                    if ((botao0 == 1'b0))
+                        estado_atual <= Verifica;
+                    // Inserting 'else' block to prevent latch inference
+                    else
+                        estado_atual <= Espera;
 
+                    //reg_HEX0 <= 1'b0;
+                end
+                Verifica: begin
+					 HEX0 <= 7'b1111001; //1
+                    if ((botao0 == 1'b0))
+                        estado_atual <= Exibe;
+                    // Inserting 'else' block to prevent latch inference
+                    else
+                        estado_atual <= Verifica;
 
-		end
-		
+                    //reg_HEX0 <= 1'b1;
+                end
+                Apura: begin
+					 HEX0 <= 7'b0100100; //2
+                    if ((botao0 == 1'b0))
+                        estado_atual <= Espera;
+                    // Inserting 'else' block to prevent latch inference
+                    else
+                        estado_atual <= Apura;
 
+                    //reg_HEX0 <= 1'b1;
+                end
+                Computa: begin
+					 HEX0 <= 7'b0110000; //3
+                    if ((botao0 == 1'b0))
+                        estado_atual <= Apura;
+                    // Inserting 'else' block to prevent latch inference
+                    else
+                        estado_atual <= Computa;
 
-endmodule 
+                    //reg_HEX0 <= 1'b1;
+                end
+                Exibe: begin
+					 HEX0 <= 7'b0011000; //4
+                    if ((botao0 == 1'b0))
+                        estado_atual <= Computa;
+                    // Inserting 'else' block to prevent latch inference
+                    else
+                        estado_atual <= Exibe;
+
+                    //reg_HEX0 <= 1'b1;
+                end
+                default: begin
+							HEX0 <= 7'b0000001; //0
+                    //reg_HEX0 <= 1'bx;
+                    $display ("Reach undefined state");
+                end
+            endcase
+            //HEX0 <= reg_HEX0;
+        end
+    end
+endmodule // SM1
