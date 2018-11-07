@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Oct 18 15:40:32 2018
+Analysis & Synthesis Status : Successful - Thu Nov 01 14:38:34 2018
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : urna
 Top-level Entity Name : urna
 Family : Cyclone II
-Total logic elements : 8
-    Total combinational functions : 6
-    Dedicated logic registers : 8
-Total registers : 8
-Total pins : 10
+Total logic elements : 1,724
+    Total combinational functions : 1,709
+    Dedicated logic registers : 157
+Total registers : 157
+Total pins : 51
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

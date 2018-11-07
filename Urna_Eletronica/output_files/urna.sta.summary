@@ -3,51 +3,163 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'clock'
-Slack : -1.380
-TNS   : -6.881
+Slack : -18.487
+TNS   : -299.946
 
-Type  : Slow Model Setup 'botao0'
-Slack : 0.230
-TNS   : 0.000
+Type  : Slow Model Setup 'estado_atual.00000011'
+Slack : -4.515
+TNS   : -4.515
 
-Type  : Slow Model Hold 'botao0'
-Slack : 0.517
-TNS   : 0.000
+Type  : Slow Model Setup 'estado_atual.00000001'
+Slack : -4.294
+TNS   : -4.294
+
+Type  : Slow Model Setup 'key0'
+Slack : -3.342
+TNS   : -103.871
+
+Type  : Slow Model Setup 'key1'
+Slack : -0.270
+TNS   : -0.599
+
+Type  : Slow Model Setup 'key2'
+Slack : -0.257
+TNS   : -0.500
+
+Type  : Slow Model Hold 'key0'
+Slack : -2.836
+TNS   : -74.058
 
 Type  : Slow Model Hold 'clock'
-Slack : 2.142
+Slack : -1.316
+TNS   : -7.790
+
+Type  : Slow Model Hold 'estado_atual.00000011'
+Slack : -1.117
+TNS   : -1.117
+
+Type  : Slow Model Hold 'key1'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Hold 'key2'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Hold 'estado_atual.00000001'
+Slack : 4.025
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'clock'
+Slack : -0.762
+TNS   : -27.908
+
+Type  : Slow Model Removal 'clock'
+Slack : 0.225
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'clock'
 Slack : -1.380
-TNS   : -6.380
+TNS   : -82.380
 
-Type  : Slow Model Minimum Pulse Width 'botao0'
+Type  : Slow Model Minimum Pulse Width 'key0'
 Slack : -1.222
-TNS   : -4.222
+TNS   : -69.222
+
+Type  : Slow Model Minimum Pulse Width 'key1'
+Slack : -1.222
+TNS   : -5.222
+
+Type  : Slow Model Minimum Pulse Width 'key2'
+Slack : -1.222
+TNS   : -5.222
+
+Type  : Slow Model Minimum Pulse Width 'estado_atual.00000001'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'estado_atual.00000011'
+Slack : 0.500
+TNS   : 0.000
 
 Type  : Fast Model Setup 'clock'
-Slack : -0.308
-TNS   : -1.503
+Slack : -7.503
+TNS   : -97.030
 
-Type  : Fast Model Setup 'botao0'
-Slack : 0.606
+Type  : Fast Model Setup 'estado_atual.00000011'
+Slack : -2.077
+TNS   : -2.077
+
+Type  : Fast Model Setup 'estado_atual.00000001'
+Slack : -1.962
+TNS   : -1.962
+
+Type  : Fast Model Setup 'key0'
+Slack : -0.985
+TNS   : -22.425
+
+Type  : Fast Model Setup 'key1'
+Slack : 0.416
 TNS   : 0.000
 
-Type  : Fast Model Hold 'botao0'
-Slack : 0.245
+Type  : Fast Model Setup 'key2'
+Slack : 0.424
 TNS   : 0.000
+
+Type  : Fast Model Hold 'key0'
+Slack : -1.621
+TNS   : -47.333
 
 Type  : Fast Model Hold 'clock'
-Slack : 1.162
+Slack : -1.073
+TNS   : -7.925
+
+Type  : Fast Model Hold 'estado_atual.00000011'
+Slack : -0.500
+TNS   : -0.500
+
+Type  : Fast Model Hold 'key1'
+Slack : 0.215
 TNS   : 0.000
+
+Type  : Fast Model Hold 'key2'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'estado_atual.00000001'
+Slack : 2.435
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'clock'
+Slack : 0.072
+TNS   : 0.000
+
+Type  : Fast Model Removal 'clock'
+Slack : -0.108
+TNS   : -1.752
 
 Type  : Fast Model Minimum Pulse Width 'clock'
 Slack : -1.380
-TNS   : -6.380
+TNS   : -82.380
 
-Type  : Fast Model Minimum Pulse Width 'botao0'
+Type  : Fast Model Minimum Pulse Width 'key0'
 Slack : -1.222
-TNS   : -4.222
+TNS   : -69.222
+
+Type  : Fast Model Minimum Pulse Width 'key1'
+Slack : -1.222
+TNS   : -5.222
+
+Type  : Fast Model Minimum Pulse Width 'key2'
+Slack : -1.222
+TNS   : -5.222
+
+Type  : Fast Model Minimum Pulse Width 'estado_atual.00000001'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'estado_atual.00000011'
+Slack : 0.500
+TNS   : 0.000
 
 ------------------------------------------------------------

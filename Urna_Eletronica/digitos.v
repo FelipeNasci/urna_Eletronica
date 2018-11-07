@@ -1,12 +1,10 @@
-module digitos(key1,key2,hex1,hex2,rst,bcd1,bcd2);
-	input key1,key2,rst;
-	output reg teste;
+module digitos(key1,key2,hex1,hex2,bcd1,bcd2);
+	input key1,key2;
 	output reg [6:0] hex1,hex2;
 	reg [3:0]d1,d2;
 	output reg [3:0] bcd1,bcd2;
 	
 initial begin
-	d3<=0;
 	d2<=0;
 	d1<=0;
 	end
@@ -14,6 +12,9 @@ initial begin
 	function [6:0] display;
 		input [3:0] bcd;
 		reg   [6:0] segmentos;
+		//if (r) begin
+		//bcd = 0;
+		//end
 	begin
 	case (bcd)
 		0: segmentos = 7'b1000000;	//gfedcba 
@@ -43,11 +44,7 @@ always@(negedge key2) begin
 		if(d2>9-1) 
 			d2<=0;	
 end
-always@(*)begin
- teste<=key1;
- if(~key1)
- d3<=1'b1;
-end 
+
 always @(*) begin
 	bcd1<=d1;
 	bcd2<=d2;

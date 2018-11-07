@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\cliente\Desktop\urna_Eletronica-master\urna_Eletronica-master\Urna_Eletronica\simulation\modelsim
+vurna
+!i10b 1
+!s100 OY7FFf]QcN]7F0B6[1F[60
+IaZn[faB30L]<ETLOjR[lj1
+V9aX?0E7SIYd32NmWSfniI3
+Z1 dC:\Users\cliente\Desktop\urna_Eletronica-master\urna_Eletronica-master\Urna_Eletronica\simulation\modelsim
+w1540155195
+8C:/Users/cliente/Desktop/urna_Eletronica-master/urna_Eletronica-master/Urna_Eletronica/urna.v
+FC:/Users/cliente/Desktop/urna_Eletronica-master/urna_Eletronica-master/Urna_Eletronica/urna.v
+L0 4
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1540155291.806000
+!s107 C:/Users/cliente/Desktop/urna_Eletronica-master/urna_Eletronica-master/Urna_Eletronica/urna.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/cliente/Desktop/urna_Eletronica-master/urna_Eletronica-master/Urna_Eletronica|C:/Users/cliente/Desktop/urna_Eletronica-master/urna_Eletronica-master/Urna_Eletronica/urna.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+C:/Users/cliente/Desktop/urna_Eletronica-master/urna_Eletronica-master/Urna_Eletronica -O0
